@@ -1,0 +1,57 @@
+{
+    "name": "create-lwc-app-serviceless",
+    "description": "My amazing LWC app",
+    "version": "0.0.1",
+    "dependencies": {
+        "compression": "^1.7.4",
+        "express": "^4.17.3",
+        "helmet": "^5.0.2"
+    },
+    "keywords": [
+        "lwc"
+    ],
+    "license": "MIT",
+    "nodemonConfig": {
+        "watch": [
+            "src/server/**/*.js"
+        ],
+        "ext": "js",
+        "ignore": [
+            "src/**/*.spec.js",
+            "src/**/*.test.js"
+        ],
+        "exec": "node ./src/server/api.js"
+    },
+    "scripts": {
+        "build": "cross-env NODE_ENV=production webpack",
+        "build:development": "cross-env NODE_ENV=development webpack",
+        "lint": "eslint ./src/**/*.js",
+        "start": "cross-env NODE_ENV=development webpack-dev-server",
+        "start:api": "node src/server/api.js",
+        "start:client": "node scripts/server.js"
+    },
+    "devDependencies": {
+        "@babel/core": "^7.17.7",
+        "@babel/eslint-parser": "^7.17.0",
+        "@lwc/eslint-plugin-lwc": "^1.1.2",
+        "@salesforce/eslint-config-lwc": "^3.2.3",
+        "@salesforce/eslint-plugin-lightning": "^1.0.0",
+        "copy-webpack-plugin": "^10.2.4",
+        "cross-env": "^7.0.3",
+        "eslint": "^8.11.0",
+        "eslint-plugin-import": "^2.25.4",
+        "eslint-plugin-inclusive-language": "^2.2.0",
+        "eslint-plugin-jest": "^26.1.1",
+        "html-webpack-plugin": "^5.5.0",
+        "jest": "^27.5.1",
+        "lwc-webpack-plugin": "^2.1.0",
+        "prettier": "^2.5.1",
+        "webpack": "^5.70.0",
+        "webpack-cli": "^4.9.2",
+        "webpack-dev-server": "^4.7.4"
+    },
+    "packageManager": "yarn@3.2.0",
+    "resolutions": {
+        "loader-utils": "2.0.0"
+    }
+}
